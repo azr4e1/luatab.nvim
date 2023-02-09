@@ -82,8 +82,8 @@ M.cell = function(index)
 
     return hl .. '%' .. index .. 'T' .. ' ' ..
         M.windowCount(index) ..
-        M.title(bufnr) .. ' ' ..
         M.devicon(bufnr, isSelected) .. '%T' ..
+        M.title(bufnr) .. ' ' ..
         M.modified(bufnr) ..
         M.separator(index)
 end
