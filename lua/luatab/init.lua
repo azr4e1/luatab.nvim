@@ -28,7 +28,7 @@ M.title = function(bufnr)
 end
 
 M.modified = function(bufnr)
-    return vim.fn.getbufvar(bufnr, '&modified') == 1 and ' ' or ''
+    return vim.fn.getbufvar(bufnr, '&modified') == 1 and '󰅙 ' or '󰅚 '
 end
 
 M.windowCount = function(index)
@@ -84,8 +84,7 @@ M.cell = function(index)
         M.windowCount(index) ..
         M.devicon(bufnr, isSelected) ..
         M.title(bufnr) .. ' ' ..
-        M.modified(bufnr) .. '%T' ..
-        '%999X󰅙%X' ..
+        '%T' .. '%' .. index .. 'X' .. M.modified(bufnr) .. '%X' ..
         M.separator(index)
 end
 
