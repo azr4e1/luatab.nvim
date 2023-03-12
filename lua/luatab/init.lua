@@ -81,9 +81,9 @@ M.cell = function(index)
     local hl = (isSelected and '%#TabLineSel#' or '%#TabLine#')
 
     return hl .. '%' .. index .. 'T' .. ' ' ..
-        M.windowCount(index) ..
         M.devicon(bufnr, isSelected) ..
         M.title(bufnr) .. ' ' ..
+        M.windowCount(index) ..
         '%T' .. '%' .. index .. 'X' .. M.modified(bufnr) .. '%X' ..
         M.separator(index)
 end
