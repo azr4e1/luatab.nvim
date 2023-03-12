@@ -85,6 +85,7 @@ M.cell = function(index)
         M.devicon(bufnr, isSelected) ..
         M.title(bufnr) .. ' ' ..
         M.modified(bufnr) .. '%T' ..
+        '%999X󰅙%X' ..
         M.separator(index)
 end
 
@@ -94,9 +95,9 @@ M.tabline = function()
         line = line .. M.cell(i)
     end
     line = line .. '%#TabLineFill#%='
-    if vim.fn.tabpagenr('$') > 1 then
-        line = line .. '%#TabLine#%999XX'
-    end
+    -- if vim.fn.tabpagenr('$') > 1 then
+    --     line = line .. '%#TabLine#%999XX'
+    -- end
     return line
 end
 
